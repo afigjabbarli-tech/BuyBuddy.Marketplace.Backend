@@ -1,0 +1,102 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36401.2 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{11A8840F-4D84-4618-B78F-31B60C9B5F5A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{2DA609AD-13C5-400D-A1B4-E3141B05B564}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{95C2DD6E-731D-401F-AE74-10B944038ECD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{85AF1441-BFAF-4E01-B12A-30789251E06A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{DAE8EB00-77A4-4C23-891D-F4B6ECE264E9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{5E5051B5-8B87-4082-A361-3E976A6F1589}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuyBuddy.Marketplace.Shared", "src\Shared\BuyBuddy.Marketplace.Shared\BuyBuddy.Marketplace.Shared.csproj", "{2E147D91-6E37-4B7E-9A41-A02DF3CF5962}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuyBuddy.Marketplace.Domain", "src\Core\BuyBuddy.Marketplace.Domain\BuyBuddy.Marketplace.Domain.csproj", "{AD5A81E1-08A0-491F-8B6E-EC63398DF3D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuyBuddy.Marketplace.Application", "src\Core\BuyBuddy.Marketplace.Application\BuyBuddy.Marketplace.Application.csproj", "{CA98091F-B432-4187-92AF-7282675A0232}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuyBuddy.Marketplace.Infrastructure", "src\Infrastructure\BuyBuddy.Marketplace.Infrastructure\BuyBuddy.Marketplace.Infrastructure.csproj", "{A6AD2B5E-1183-486B-8B49-0D48D527CA8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuyBuddy.Marketplace.Persistence", "src\Infrastructure\BuyBuddy.Marketplace.Persistence\BuyBuddy.Marketplace.Persistence.csproj", "{3C8AAAA5-BF88-4C26-ACAF-FE3378A056A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuyBuddy.Marketplace.WebAPI", "src\Presentation\BuyBuddy.Marketplace.WebAPI\BuyBuddy.Marketplace.WebAPI.csproj", "{CA124DB1-57BC-4D7F-8503-5693B0689CC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuyBuddy.Marketplace.UnitTests", "tests\BuyBuddy.Marketplace.UnitTests\BuyBuddy.Marketplace.UnitTests.csproj", "{A50552BA-AA68-4845-9AB2-FCCEE50259EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuyBuddy.Marketplace.IntegrationTests", "tests\BuyBuddy.Marketplace.IntegrationTests\BuyBuddy.Marketplace.IntegrationTests.csproj", "{24E6F8DD-A2DB-49ED-9DC4-96F28B8EF41B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuyBuddy.Marketplace.ApiTests", "tests\BuyBuddy.Marketplace.ApiTests\BuyBuddy.Marketplace.ApiTests.csproj", "{1A495CDF-6E60-4E35-A1E1-A804ED44C5F0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2E147D91-6E37-4B7E-9A41-A02DF3CF5962}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E147D91-6E37-4B7E-9A41-A02DF3CF5962}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E147D91-6E37-4B7E-9A41-A02DF3CF5962}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E147D91-6E37-4B7E-9A41-A02DF3CF5962}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD5A81E1-08A0-491F-8B6E-EC63398DF3D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD5A81E1-08A0-491F-8B6E-EC63398DF3D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD5A81E1-08A0-491F-8B6E-EC63398DF3D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD5A81E1-08A0-491F-8B6E-EC63398DF3D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA98091F-B432-4187-92AF-7282675A0232}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA98091F-B432-4187-92AF-7282675A0232}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA98091F-B432-4187-92AF-7282675A0232}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA98091F-B432-4187-92AF-7282675A0232}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6AD2B5E-1183-486B-8B49-0D48D527CA8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6AD2B5E-1183-486B-8B49-0D48D527CA8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6AD2B5E-1183-486B-8B49-0D48D527CA8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6AD2B5E-1183-486B-8B49-0D48D527CA8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C8AAAA5-BF88-4C26-ACAF-FE3378A056A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C8AAAA5-BF88-4C26-ACAF-FE3378A056A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C8AAAA5-BF88-4C26-ACAF-FE3378A056A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C8AAAA5-BF88-4C26-ACAF-FE3378A056A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA124DB1-57BC-4D7F-8503-5693B0689CC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA124DB1-57BC-4D7F-8503-5693B0689CC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA124DB1-57BC-4D7F-8503-5693B0689CC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA124DB1-57BC-4D7F-8503-5693B0689CC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A50552BA-AA68-4845-9AB2-FCCEE50259EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A50552BA-AA68-4845-9AB2-FCCEE50259EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A50552BA-AA68-4845-9AB2-FCCEE50259EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A50552BA-AA68-4845-9AB2-FCCEE50259EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24E6F8DD-A2DB-49ED-9DC4-96F28B8EF41B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24E6F8DD-A2DB-49ED-9DC4-96F28B8EF41B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24E6F8DD-A2DB-49ED-9DC4-96F28B8EF41B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24E6F8DD-A2DB-49ED-9DC4-96F28B8EF41B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A495CDF-6E60-4E35-A1E1-A804ED44C5F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A495CDF-6E60-4E35-A1E1-A804ED44C5F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A495CDF-6E60-4E35-A1E1-A804ED44C5F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A495CDF-6E60-4E35-A1E1-A804ED44C5F0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{95C2DD6E-731D-401F-AE74-10B944038ECD} = {2DA609AD-13C5-400D-A1B4-E3141B05B564}
+		{85AF1441-BFAF-4E01-B12A-30789251E06A} = {2DA609AD-13C5-400D-A1B4-E3141B05B564}
+		{DAE8EB00-77A4-4C23-891D-F4B6ECE264E9} = {2DA609AD-13C5-400D-A1B4-E3141B05B564}
+		{5E5051B5-8B87-4082-A361-3E976A6F1589} = {2DA609AD-13C5-400D-A1B4-E3141B05B564}
+		{2E147D91-6E37-4B7E-9A41-A02DF3CF5962} = {5E5051B5-8B87-4082-A361-3E976A6F1589}
+		{AD5A81E1-08A0-491F-8B6E-EC63398DF3D1} = {95C2DD6E-731D-401F-AE74-10B944038ECD}
+		{CA98091F-B432-4187-92AF-7282675A0232} = {95C2DD6E-731D-401F-AE74-10B944038ECD}
+		{A6AD2B5E-1183-486B-8B49-0D48D527CA8B} = {85AF1441-BFAF-4E01-B12A-30789251E06A}
+		{3C8AAAA5-BF88-4C26-ACAF-FE3378A056A1} = {85AF1441-BFAF-4E01-B12A-30789251E06A}
+		{CA124DB1-57BC-4D7F-8503-5693B0689CC3} = {DAE8EB00-77A4-4C23-891D-F4B6ECE264E9}
+		{A50552BA-AA68-4845-9AB2-FCCEE50259EA} = {11A8840F-4D84-4618-B78F-31B60C9B5F5A}
+		{24E6F8DD-A2DB-49ED-9DC4-96F28B8EF41B} = {11A8840F-4D84-4618-B78F-31B60C9B5F5A}
+		{1A495CDF-6E60-4E35-A1E1-A804ED44C5F0} = {11A8840F-4D84-4618-B78F-31B60C9B5F5A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2523CC0C-09FE-4DA5-A839-454967EDA96D}
+	EndGlobalSection
+EndGlobal

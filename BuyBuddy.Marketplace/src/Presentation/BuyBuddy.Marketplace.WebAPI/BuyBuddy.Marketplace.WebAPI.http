@@ -1,0 +1,6 @@
+@BuyBuddy.Marketplace.WebAPI_HostAddress = http://localhost:5041
+
+GET {{BuyBuddy.Marketplace.WebAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

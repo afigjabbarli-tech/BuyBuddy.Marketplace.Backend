@@ -8,8 +8,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Core\BuyBuddy.Marketplace.Application\BuyBuddy.Marketplace.Application.csproj" />
-    <ProjectReference Include="..\..\Core\BuyBuddy.Marketplace.Domain\BuyBuddy.Marketplace.Domain.csproj" />
-    <ProjectReference Include="..\..\Shared\BuyBuddy.Marketplace.Shared\BuyBuddy.Marketplace.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>

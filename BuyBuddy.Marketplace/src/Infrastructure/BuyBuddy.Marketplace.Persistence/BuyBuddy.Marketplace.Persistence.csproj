@@ -7,11 +7,26 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Concretes\Repositories\CSV\" />
+    <Folder Include="Concretes\Repositories\JSON\" />
+    <Folder Include="Concretes\Repositories\TXT\" />
     <Folder Include="Concretes\Services\" />
-    <Folder Include="Concretes\Repositories\" />
     <Folder Include="Context\" />
     <Folder Include="Configurations\" />
     <Folder Include="Migrations\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.10" />
+    <PackageReference Include="Serilog" Version="4.3.0" />
+    <PackageReference Include="Serilog.Extensions.Logging" Version="9.0.2" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="6.0.0" />
+    <PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\BuyBuddy.Marketplace.Application\BuyBuddy.Marketplace.Application.csproj" />
+    <ProjectReference Include="..\..\Shared\BuyBuddy.Marketplace.Shared\BuyBuddy.Marketplace.Shared.csproj" />
   </ItemGroup>
 
 </Project>

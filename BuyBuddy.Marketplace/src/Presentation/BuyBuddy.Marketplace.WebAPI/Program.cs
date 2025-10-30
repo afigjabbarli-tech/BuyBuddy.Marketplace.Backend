@@ -1,3 +1,4 @@
+﻿using Serilog;
 
 namespace BuyBuddy.Marketplace.WebAPI
 {
@@ -5,32 +6,43 @@ namespace BuyBuddy.Marketplace.WebAPI
     {
         public static void Main(string[] args)
         {
-            var builder = WebApplication.CreateBuilder(args);
+            // 1️ Serilog configuration...
+            Log.Logger = new LoggerConfiguration()
+               .MinimumLevel.Verbose()
+               .WriteTo.Console()
+               .WriteTo.File("Logs/log-.txt", rollingInterval: RollingInterval.Day)
+               .Enrich.WithMachineName()
+               .Enrich.WithThreadId()
+               .Enrich.WithProcessId()
+               .Enrich.WithEnvironmentName()
+               .CreateLogger();
 
-            // Add services to the container.
-
-            builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-            builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
-
-            var app = builder.Build();
-
-            // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
+            try
             {
-                app.UseSwagger();
-                app.UseSwaggerUI();
+                Log.Information("Starting up the application...");
+
+                var builder = WebApplication.CreateBuilder(args);
+
+                // 2 Integrates Serilog into the host system...
+                builder.Host.UseSerilog();
+
+                // 3️ Call Startup...
+                var startup = new Startup(builder.Configuration);
+                startup.ConfigureServices(builder.Services);
+
+                var app = builder.Build();
+                startup.Configure(app, app.Environment);
+
+                app.Run();
             }
-
-            app.UseHttpsRedirection();
-
-            app.UseAuthorization();
-
-
-            app.MapControllers();
-
-            app.Run();
+            catch (Exception ex)
+            {
+                Log.Fatal(ex, "Application terminated unexpectedly!");
+            }
+            finally
+            {
+                Log.CloseAndFlush();
+            }
         }
     }
 }

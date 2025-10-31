@@ -7,9 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Concretes\Repositories\CSV\" />
-    <Folder Include="Concretes\Repositories\JSON\" />
-    <Folder Include="Concretes\Repositories\TXT\" />
     <Folder Include="Concretes\Services\" />
     <Folder Include="Context\" />
     <Folder Include="Configurations\" />

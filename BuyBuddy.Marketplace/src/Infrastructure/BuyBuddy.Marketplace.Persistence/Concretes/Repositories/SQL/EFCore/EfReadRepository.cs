@@ -25,7 +25,7 @@ namespace BuyBuddy.Marketplace.Persistence.Concretes.Repositories.SQL.EFCore
             _logger = logger;
         }
 
-        protected IQueryable<TEntity> Table(bool isTracking) => isTracking
+        protected IQueryable<TEntity> Query(bool isTracking) => isTracking
             ? _context.Set<TEntity>()
             : _context.Set<TEntity>().AsNoTracking();
 
@@ -41,7 +41,7 @@ namespace BuyBuddy.Marketplace.Persistence.Concretes.Repositories.SQL.EFCore
                 {
                     _logger.LogInformation("Fetching entity {EntityName} with UID {UID}", typeof(TEntity).Name, uid);
 
-                    var entity = await Table(isTracking)
+                    var entity = await Query(isTracking)
                         .SingleOrDefaultAsync(e => e.Uid!.Equals(uid), cancellationToken);
 
                     if (entity == null)
@@ -67,7 +67,7 @@ namespace BuyBuddy.Marketplace.Persistence.Concretes.Repositories.SQL.EFCore
                 {
                     _logger.LogInformation("Fetching entity {EntityName} with UID {UID}", typeof(TEntity).Name, uid);
 
-                    var entity = Table(isTracking)
+                    var entity = Query(isTracking)
                         .SingleOrDefault(e => e.Uid!.Equals(uid));
 
                     if (entity == null)
@@ -92,7 +92,7 @@ namespace BuyBuddy.Marketplace.Persistence.Concretes.Repositories.SQL.EFCore
                 {
                     _logger.LogInformation("Fetching all entities of type {EntityName}", typeof(TEntity).Name);
 
-                    var entities = await Table(isTracking).ToListAsync(cancellationToken);
+                    var entities = await Query(isTracking).ToListAsync(cancellationToken);
 
                     if (entities == null || entities.Count == 0)
                         _logger.LogWarning("No entities found for {EntityName}", typeof(TEntity).Name);
@@ -115,7 +115,7 @@ namespace BuyBuddy.Marketplace.Persistence.Concretes.Repositories.SQL.EFCore
                 {
                     _logger.LogInformation("Fetching all entities of type {EntityName}", typeof(TEntity).Name);
 
-                    var entities = Table(isTracking).ToList();
+                    var entities = Query(isTracking).ToList();
 
                     if (entities == null || entities.Count == 0)
                         _logger.LogWarning("No entities found for {EntityName}", typeof(TEntity).Name);
@@ -140,7 +140,7 @@ namespace BuyBuddy.Marketplace.Persistence.Concretes.Repositories.SQL.EFCore
                 {
                     _logger.LogInformation("Fetching entity {EntityName} with condition", typeof(TEntity).Name);
 
-                    var entity = await Table(isTracking)
+                    var entity = await Query(isTracking)
                         .FirstOrDefaultAsync(predicate, cancellationToken);
 
                     if (entity == null)
@@ -165,7 +165,7 @@ namespace BuyBuddy.Marketplace.Persistence.Concretes.Repositories.SQL.EFCore
                 {
                     _logger.LogInformation("Fetching entity {EntityName} with condition", typeof(TEntity).Name);
 
-                    var entity = Table(isTracking)
+                    var entity = Query(isTracking)
                         .FirstOrDefault(predicate);
 
                     if (entity == null)
@@ -191,7 +191,7 @@ namespace BuyBuddy.Marketplace.Persistence.Concretes.Repositories.SQL.EFCore
                 {
                     _logger.LogInformation("Fetching entities of type {EntityName} with condition", typeof(TEntity).Name);
 
-                    var entities = await Table(isTracking)
+                    var entities = await Query(isTracking)
                         .Where(predicate)
                         .ToListAsync(cancellationToken);
 
@@ -217,7 +217,7 @@ namespace BuyBuddy.Marketplace.Persistence.Concretes.Repositories.SQL.EFCore
                 {
                     _logger.LogInformation("Fetching entities of type {EntityName} with condition", typeof(TEntity).Name);
 
-                    var entities = Table(isTracking)
+                    var entities = Query(isTracking)
                         .Where(predicate)
                         .ToList();
 
@@ -243,7 +243,7 @@ namespace BuyBuddy.Marketplace.Persistence.Concretes.Repositories.SQL.EFCore
                 {
                     _logger.LogInformation("Counting entities of type {EntityName}", typeof(TEntity).Name);
 
-                    var count = await Table(isTracking).CountAsync(cancellationToken);
+                    var count = await Query(isTracking).CountAsync(cancellationToken);
 
                     _logger.LogInformation("{Count} entities found for {EntityName}", count, typeof(TEntity).Name);
 
@@ -264,7 +264,7 @@ namespace BuyBuddy.Marketplace.Persistence.Concretes.Repositories.SQL.EFCore
                 {
                     _logger.LogInformation("Counting entities of type {EntityName}", typeof(TEntity).Name);
 
-                    var count = Table(isTracking).Count();
+                    var count = Query(isTracking).Count();
 
                     _logger.LogInformation("{Count} entities found for {EntityName}", count, typeof(TEntity).Name);
 
@@ -288,7 +288,7 @@ namespace BuyBuddy.Marketplace.Persistence.Concretes.Repositories.SQL.EFCore
                 {
                     _logger.LogInformation("Counting entities of type {EntityName} with filter", typeof(TEntity).Name);
 
-                    var count = await Table(isTracking).Where(predicate).CountAsync(cancellationToken);
+                    var count = await Query(isTracking).Where(predicate).CountAsync(cancellationToken);
 
                     _logger.LogInformation("{Count} entities found for {EntityName} with filter", count, typeof(TEntity).Name);
 
@@ -311,7 +311,7 @@ namespace BuyBuddy.Marketplace.Persistence.Concretes.Repositories.SQL.EFCore
                 {
                     _logger.LogInformation("Counting entities of type {EntityName} with filter", typeof(TEntity).Name);
 
-                    var count = Table(isTracking).Where(predicate).Count();
+                    var count = Query(isTracking).Where(predicate).Count();
 
                     _logger.LogInformation("{Count} entities found for {EntityName} with filter", count, typeof(TEntity).Name);
 
@@ -335,7 +335,7 @@ namespace BuyBuddy.Marketplace.Persistence.Concretes.Repositories.SQL.EFCore
                 {
                     _logger.LogInformation("Checking existence of entities of type {EntityName} with filter", typeof(TEntity).Name);
 
-                    var exists = await Table(isTracking).AnyAsync(predicate, cancellationToken);
+                    var exists = await Query(isTracking).AnyAsync(predicate, cancellationToken);
 
                     _logger.LogInformation("Existence check for {EntityName} returned {Exists}", typeof(TEntity).Name, exists);
 
@@ -358,7 +358,7 @@ namespace BuyBuddy.Marketplace.Persistence.Concretes.Repositories.SQL.EFCore
                 {
                     _logger.LogInformation("Checking existence of entities of type {EntityName} with filter", typeof(TEntity).Name);
 
-                    var exists = Table(isTracking).Any(predicate);
+                    var exists = Query(isTracking).Any(predicate);
 
                     _logger.LogInformation("Existence check for {EntityName} returned {Exists}", typeof(TEntity).Name, exists);
 
